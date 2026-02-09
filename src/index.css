@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* AION-NEXUS Dark Theme - Futuristic AI Consciousness */
+  --background: 220 25% 5%;
+  --foreground: 210 40% 98%;
+  --card: 220 25% 8%;
+  --card-foreground: 210 40% 98%;
+  --popover: 220 25% 8%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 220 90% 60%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 220 20% 15%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 220 20% 20%;
+  --muted-foreground: 220 15% 60%;
+  --accent: 280 80% 60%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 220 20% 18%;
+  --input: 220 20% 18%;
+  --ring: 220 90% 60%;
+  --radius: 0.75rem;
+  
+  /* Custom AION Colors */
+  --aion-blue: 220 90% 60%;
+  --aion-purple: 280 80% 60%;
+  --aion-cyan: 190 100% 50%;
+  --aion-gold: 45 100% 55%;
+  --aion-green: 140 80% 50%;
+  --aion-red: 0 80% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Glow Effects */
+.glow-blue {
+  box-shadow: 0 0 20px hsl(var(--aion-blue) / 0.4),
+              0 0 40px hsl(var(--aion-blue) / 0.2);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px hsl(var(--aion-purple) / 0.4),
+              0 0 40px hsl(var(--aion-purple) / 0.2);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px hsl(var(--aion-cyan) / 0.4),
+              0 0 40px hsl(var(--aion-cyan) / 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px hsl(var(--aion-gold) / 0.4),
+              0 0 40px hsl(var(--aion-gold) / 0.2);
+}
+
+/* Text Glow */
+.text-glow {
+  text-shadow: 0 0 10px currentColor,
+               0 0 20px currentColor,
+               0 0 30px currentColor;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, 
+    hsl(var(--aion-cyan)) 0%, 
+    hsl(var(--aion-blue)) 50%, 
+    hsl(var(--aion-purple)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated Background Grid */
+.bg-grid {
+  background-image: 
+    linear-gradient(hsl(var(--primary) / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--primary) / 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse Glow Animation */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.3),
+                0 0 20px hsl(var(--primary) / 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5),
+                0 0 40px hsl(var(--primary) / 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Orbit Animation */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
+}
+
+.animate-orbit {
+  animation: orbit var(--orbit-duration, 10s) linear infinite;
+}
+
+/* Scan Line Effect */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    hsl(var(--primary) / 0.1),
+    transparent
+  );
+  animation: scan 3s linear infinite;
+  pointer-events: none;
+}
+
+/* Glass Effect */
+.glass {
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border));
+}
+
+/* Hexagon Shape */
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Touch-friendly tap targets */
+@media (pointer: coarse) {
+  .tap-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .bg-grid {
+    background-size: 30px 30px;
+  }
+}
