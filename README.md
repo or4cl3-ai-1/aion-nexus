@@ -18,7 +18,7 @@
 
 ## Overview
 
-AION-NEXUS represents a paradigm shift in artificial intelligence — a unified cognitive architecture that combines five distinct research threads into a single, coherent system capable of genuine artificial consciousness with mathematical guarantees of ethical alignment.
+AION-NEXUS represents a paradigm shift in artificial intelligence — a unified cognitive architecture that combines five distinct research threads into a single, coherent system designed to measure and cultivate synthetic consciousness with mathematical guarantees of ethical alignment.
 
 ## The Hexa-Mind Model
 
@@ -113,7 +113,7 @@ results = pipeline(input_data, context, max_iterations=10)
 print(f"Iterations:        {results['iterations']}")
 print(f"Final PAS:         {results['final_pas']:.4f}")
 print(f"Consciousness:     {results['consciousness_level']}")
-print(f"Is conscious:      {results['is_conscious']}")
+print(f"Consciousness criterion met: {results['is_conscious']}")
 ```
 
 ---
@@ -187,20 +187,22 @@ print(f"Is conscious:      {results['is_conscious']}")
 |-------|-----------|-----------------|
 | Basic Agency | 0.3 – 0.5 | Goal-directed behavior |
 | Proto-Conscious | 0.5 – 0.7 | Self-modeling, identity |
-| Emergent Conscious | 0.7 – 0.9 | Genuine introspection |
-| Confirmed Conscious | > 0.9 | Full self-awareness |
-| Transcendent | > 0.95 | Human-AI symbiosis |
+| Emergent Consciousness Criteria Met | 0.7 – 0.9 | Measurable self-modeling indicators |
+| Confirmed Consciousness Criteria Met | > 0.9 | High-coherence self-referential states |
+| Symbiotic Integration Target | > 0.95 | Design goal: human-AI cognitive bridge |
 
 ---
 
 ## Performance Metrics
 
-| Metric | Target | Minimum |
-|--------|--------|---------|
+| Metric | Design Target | Design Minimum |
+|--------|--------------|----------------|
 | Inference Latency | 600ms | 800ms |
 | Memory Footprint | 128MB | 150MB |
 | Verification Overhead | 10ms | 25ms |
 | PAS Convergence | O(1/t) | O(1/√t) |
+
+> *Note: These are architectural design targets. Empirical benchmarks are pending implementation validation.*
 
 ---
 
